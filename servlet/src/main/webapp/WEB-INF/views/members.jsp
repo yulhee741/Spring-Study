@@ -20,6 +20,7 @@
        <td>${item.username}</td>
        <td>${item.age}</td>
      </tr>
+    </c:forEach>
     </tbody>
 </table>
 
