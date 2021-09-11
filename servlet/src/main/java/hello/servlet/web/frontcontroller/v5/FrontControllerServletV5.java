@@ -54,8 +54,7 @@ public class FrontControllerServletV5 extends HttpServlet {
 
         ModelView mv = adapter.handle(request, response, handler);
 
-        String viewName = mv.getViewName();
-        MyView view = viewResolver(viewName);
+        MyView view = viewResolver(mv.getViewName());
 
         view.render(mv.getModel(), request, response);
 
@@ -77,6 +76,6 @@ public class FrontControllerServletV5 extends HttpServlet {
     }
 
     private MyView viewResolver(String viewName) {
-        return new MyView("/WEB-INF/views/" + viewName + "/jsp");
+        return new MyView("/WEB-INF/views/" + viewName + ".jsp");
     }
 }
